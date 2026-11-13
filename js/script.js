@@ -56,15 +56,17 @@ const PORTFOLIO_DATA = {
   // Add entries like: { title: "", organization: "", period: "", description: "" }
   training: [],
 
-  // Each entry: { name, organization, year (optional), link (optional) }
-  // Add the year or a certificate link later; empty fields are not shown.
+  // Each entry: { name, detail (optional), organization, year (optional), link (optional) }
+  // link = file inside assets/certificates/ (shows a "View certificate" button).
+  // Empty fields are not shown. Add year/link for the ones that are still empty.
   certifications: [
-    { name: "O Level", organization: "NIELIT India", year: "", link: "" },
-    { name: "CCC", organization: "NIELIT India", year: "", link: "" },
-    { name: "ADCA", organization: "P Tech Foundation", year: "", link: "" },
-    { name: "BCA", organization: "CSC e-Governance", year: "", link: "" },
-    { name: "FTCP", organization: "PKKVY", year: "", link: "" },
-    { name: "Directorate of Training & Employment", organization: "Wadhwani Foundation", year: "", link: "" }
+    { name: "O Level", detail: "O Level 'IT'", organization: "NIELIT India", year: "2026", link: "assets/certificates/o-level.pdf" },
+    { name: "CCC", detail: "", organization: "NIELIT India", year: "", link: "" },
+    { name: "ADCA", detail: "Advanced Diploma in Computer Application", organization: "P-Tech Foundation", year: "2021", link: "assets/certificates/adca.jpg" },
+    { name: "BCA", detail: "", organization: "CSC e-Governance", year: "", link: "" },
+    { name: "FTCP", detail: "Field Technician Computing and Peripherals", organization: "Electronics Sector Skills Council of India (ESSCI)", year: "2024", link: "assets/certificates/ftcp.pdf" },
+    { name: "Directorate of Training & Employment", detail: "", organization: "Wadhwani Foundation", year: "", link: "" },
+    { name: "AI Literacy", detail: "", organization: "IBM SkillsBuild", year: "2026", link: "assets/certificates/ai-literacy.pdf" }
   ]
 };
 
@@ -183,6 +185,7 @@ function renderCertifications(d) {
     <article class="card hoverable cert reveal">
       <span class="cert-ico" aria-hidden="true">${ICON.award}</span>
       <h3>${esc(c.name)}</h3>
+      ${c.detail ? `<p>${esc(c.detail)}</p>` : ""}
       ${c.organization ? `<p>${esc(c.organization)}</p>` : ""}
       ${c.year ? `<p>${esc(c.year)}</p>` : ""}
       ${c.link ? `<p><a href="${esc(c.link)}" target="_blank" rel="noopener noreferrer">View certificate</a></p>` : ""}

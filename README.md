@@ -10,6 +10,7 @@ portfolio/
 ├── js/script.js          <- all your content is at the top (PORTFOLIO_DATA)
 ├── assets/
 │   ├── images/           <- profile.jpg, project1.jpg, project2.jpg
+│   ├── certificates/     <- certificate files (PDF / image)
 │   └── documents/resume.pdf
 └── README.md
 ```
@@ -18,7 +19,7 @@ portfolio/
 Open `js/script.js` and edit the `PORTFOLIO_DATA` block at the top:
 - **Technologies:** fill the `technologies: []` list of each project.
 - **GitHub link:** your profile link is already set in the `github` value near the top. Clear it to hide the GitHub card.
-- **Certificates:** your six certificates are already listed. Add a `year` or a `link` to each one when you have them.
+- **Certificates:** put the file in `assets/certificates/` and set its `link` and `year` in `certifications`. CCC, BCA and Directorate of Training & Employment have no file yet.
 - **Training / internship:** add entries to `training`. The section stays hidden while the list is empty.
 - **Project links:** add `demo` or `github` URLs. Empty links are not shown.
 
